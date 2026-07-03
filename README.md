@@ -1,5 +1,39 @@
 <img width="665" height="446" alt="Captura de pantalla 2026-07-02 a las 3 58 04 p  m" src="https://github.com/user-attachments/assets/527e0da8-9204-4001-b68e-db23ccd13976" />
 
+## estructura de carpetas
+
+```
+application/
+├── port/
+│   ├── in/
+│   │   └── IArchivoServicePort.java
+│   ├── out/
+│   │   └── IArchivoRepositoryPort.java
+│
+├── service/
+│   └── ArchivoService.java
+│
+domain/
+├── model/
+│   └── Archivo.java
+│
+infrastructure/
+├── adapter/
+│   ├── in/
+│   │   └── rest/
+│   │       └── ArchivoRest.java
+│   │
+│   ├── out/
+│   │   ├── persistence/
+│   │   │   ├── ArchivoRepository.java
+│   │   │   └── ArchivoRepositoryAdapter.java
+│   │   │
+│   │   └── client/
+│   │       └── ArchivoClientAdapter.java
+│
+└── ArchivoApplication.java
+```
+
 ## Iniciar sesion en docker hub
 
 ```
