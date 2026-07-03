@@ -141,3 +141,9 @@ Base de datos:
 ```
 neondb
 ```
+
+angular zone
+
+```
+npm install zone.js --save
+```
