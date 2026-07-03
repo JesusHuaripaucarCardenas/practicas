@@ -76,6 +76,27 @@ docker push jesushuaripaucarcardenas/practica:1.0
 docker pull jesushuaripaucarcardenas/practica:1.0
 ```
 
+## Inatalar minikube
+
+```bash
+winget install Kubernetes.minikube
+```
+```bash
+Get-ChildItem "C:\Program Files" -Filter minikube.exe -Recurse -ErrorAction SilentlyContinue
+```
+```bash
+$env:Path -split ';'
+```
+```bash
+$env:Path += ";C:\Program Files\Kubernetes\Minikube"
+```
+```bash
+where.exe minikube
+```
+```bash
+minikube version
+```
+
 ## Iniciar minikube
 
 ```bash
