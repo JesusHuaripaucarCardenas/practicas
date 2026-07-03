@@ -1,0 +1,10 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: practica
+  r2dbc:
+    url: r2dbc:postgresql://${DB_HOST:ep-polished-leaf-acn11qxh-pooler.sa-east-1.aws.neon.tech}/${DB_NAME:neondb}?sslMode=require
+    username: ${DB_USERNAME:neondb_owner}
+    password: ${DB_PASSWORD:npg_MNeK54wzgqdt}
