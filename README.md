@@ -147,3 +147,38 @@ angular zone
 ```
 npm install zone.js --save
 ```
+
+base de datos
+
+```
+CREATE TABLE practica (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    dni INTEGER NOT NULL UNIQUE,
+    firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    telefono VARCHAR(20) UNIQUE,
+    date TIMESTAMP NOT NULL DEFAULT now(),
+    active BOOLEAN NOT NULL DEFAULT true
+);
+
+INSERT INTO practica (dni, firstname, lastname, email, telefono)
+VALUES 
+    (12345678, 'Juan', 'Pérez', 'juan.perez@example.com', '999111222'),
+    (87654321, 'María', 'García', 'maria.garcia@example.com', '999333444');
+
+CREATE TABLE IF NOT EXISTS producto (
+    id BIGSERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    precio NUMERIC(10,2) NOT NULL,
+    stock INTEGER NOT NULL DEFAULT 0,
+    active BOOLEAN NOT NULL DEFAULT true
+);
+
+INSERT INTO producto (nombre, precio, stock, active) VALUES
+('Laptop Lenovo IdeaPad', 2499.90, 15, true),
+('Mouse Inalámbrico Logitech', 79.50, 50, true);
+
+telefono VARCHAR(20) NOT NULL UNIQUE,
+
+```
