@@ -105,6 +105,10 @@ kubectl apply -f k8s/jesus.service.yml
 kubectl get pods -n jesus-practica-namespace
 ```
 
+```
+kubectl get all -n pepe-gonzales-namespace
+```
+
 
 Si algo falla, revisar logs:
 
