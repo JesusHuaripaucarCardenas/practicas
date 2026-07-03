@@ -1,0 +1,59 @@
+<div class="contenedor">
+  <h2>Productos</h2>
+
+  <!-- Mensaje de error, solo aparece si "error" tiene contenido -->
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <!-- ============ Formulario de creación ============ -->
+  <!-- [(ngModel)] enlaza cada input con una propiedad de nuevoProducto -->
+  <div class="formulario">
+    <h3>Nuevo producto</h3>
+    <input type="text" placeholder="Nombre" [(ngModel)]="nuevoProducto.nombre" />
+    <input type="number" placeholder="Precio" [(ngModel)]="nuevoProducto.precio" />
+    <input type="number" placeholder="Stock" [(ngModel)]="nuevoProducto.stock" />
+    <button (click)="crear()">Crear</button>
+  </div>
+
+  <!-- ============ Botones de filtro ============ -->
+  <!-- [class.activo] resalta el botón del filtro que está seleccionado -->
+  <div class="filtros">
+    <button [class.activo]="filtro === 'todos'" (click)="cambiarFiltro('todos')">Todos</button>
+    <button [class.activo]="filtro === 'activos'" (click)="cambiarFiltro('activos')">Activos</button>
+    <button [class.activo]="filtro === 'inactivos'" (click)="cambiarFiltro('inactivos')">Inactivos</button>
+  </div>
+
+  <p *ngIf="cargando">Cargando...</p>
+
+  <!-- ============ Tabla de resultados ============ -->
+  <table *ngIf="!cargando">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- *ngFor recorre el arreglo "productos" y repite la fila -->
+      <tr *ngFor="let p of productos">
+        <td>{{ p.id }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.precio }}</td>
+        <td>{{ p.stock }}</td>
+        <td>{{ p.active ? 'Activo' : 'Inactivo' }}</td>
+        <td>
+          <!-- Solo muestra "Eliminar" si está activo, y "Restaurar" si no -->
+          <button *ngIf="p.active" (click)="eliminar(p.id)">Eliminar</button>
+          <button *ngIf="!p.active" (click)="restaurar(p.id)">Restaurar</button>
+        </td>
+      </tr>
+      <!-- Mensaje cuando la lista está vacía -->
+      <tr *ngIf="productos.length === 0">
+        <td colspan="6">Sin registros.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
