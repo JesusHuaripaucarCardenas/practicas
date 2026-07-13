@@ -1,0 +1,12 @@
+package hct.huaripaucar.jesus.alquiler.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class EstadoRequest {
+    private String estado;
+}

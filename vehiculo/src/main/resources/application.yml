@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: hct-vehiculo
+  r2dbc:
+    url: r2dbc:postgresql://ep-polished-leaf-acn11qxh-pooler.sa-east-1.aws.neon.tech:5432/neondb?sslMode=require
+    username: neondb_owner
+    password: npg_MNeK54wzgqdt
+    pool:
+      enabled: true
+      initial-size: 0
+      max-size: 5
+      max-idle-time: 3m
+      max-life-time: 10m
+      validation-query: SELECT 1
+      max-acquire-time: 5s
+      max-create-connection-time: 10s

@@ -1,0 +1,14 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: hct-alquiler
+  r2dbc:
+    url: r2dbc:postgresql://ep-polished-leaf-acn11qxh-pooler.sa-east-1.aws.neon.tech:5432/neondb?sslMode=require
+    username: neondb_owner
+    password: npg_MNeK54wzgqdt
+
+services:
+  vehiculo-url: https://fuzzy-happiness-69rx57jv4xv534x7v-30081.app.github.dev
+  cliente-url: https://fuzzy-happiness-69rx57jv4xv534x7v-30082.app.github.dev

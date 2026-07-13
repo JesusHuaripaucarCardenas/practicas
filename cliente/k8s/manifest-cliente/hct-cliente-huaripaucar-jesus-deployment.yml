@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hct-cliente
+  namespace: hct-huaripaucar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hct-cliente
+  template:
+    metadata:
+      labels:
+        app: hct-cliente
+    spec:
+      containers:
+        - name: hct-cliente
+          image: jesushuaripaucarcardenas/hct-cliente:latest
+          ports:
+            - containerPort: 8082
+          env:
+            - name: SPRING_R2DBC_URL
+              valueFrom:
+                secretKeyRef: { name: hct-cliente-secret, key: R2DBC_URL }
+            - name: SPRING_R2DBC_USERNAME
+              valueFrom:
+                secretKeyRef: { name: hct-cliente-secret, key: R2DBC_USERNAME }
+            - name: SPRING_R2DBC_PASSWORD
+              valueFrom:
+                secretKeyRef: { name: hct-cliente-secret, key: R2DBC_PASSWORD }

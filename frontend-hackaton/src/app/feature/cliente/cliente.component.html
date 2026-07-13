@@ -1,0 +1,18 @@
+<h3>Clientes</h3>
+<form class="hct-form" (ngSubmit)="guardar()">
+  <input name="dni" [(ngModel)]="form.dni" placeholder="DNI" required>
+  <input name="nombres" [(ngModel)]="form.nombres" placeholder="Nombres" required>
+  <input name="apellidos" [(ngModel)]="form.apellidos" placeholder="Apellidos" required>
+  <input name="celular" [(ngModel)]="form.celular" placeholder="Celular" required>
+  <input name="correo" [(ngModel)]="form.correo" placeholder="Correo" required>
+  <input name="licencia" [(ngModel)]="form.licencia" placeholder="Licencia" required>
+  <button class="btn-crear" type="submit">{{ editando ? 'Actualizar' : 'Crear' }}</button>
+  <button class="btn-cancelar" type="button" *ngIf="editando" (click)="cancelar()">Cancelar</button>
+</form>
+<app-data-table
+  [columnas]="columnas"
+  [items]="items()"
+  (editar)="editar($event)"
+  (eliminar)="eliminar($event)"
+  (restaurar)="restaurar($event)">
+</app-data-table>

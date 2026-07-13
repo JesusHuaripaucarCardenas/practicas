@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let col of columnas">{{ col.label }}</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td *ngFor="let col of columnas">{{ item[col.key] }}</td>
+      <td>{{ item.estado }}</td>
+      <td>
+        <button class="btn-editar" (click)="editar.emit(item)">Editar</button>
+        <button class="btn-eliminar" (click)="eliminar.emit(item.id)">Eliminar</button>
+        <button class="btn-restaurar" (click)="restaurar.emit(item.id)">Restaurar</button>
+        <button
+          *ngIf="mostrarMantenimiento && item.estado !== 'ALQUILADO'"
+          class="btn-mantenimiento"
+          (click)="mantenimiento.emit(item)">
+          {{ item.estado === 'MANTENIMIENTO' ? 'Disponible' : 'Mantenimiento' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

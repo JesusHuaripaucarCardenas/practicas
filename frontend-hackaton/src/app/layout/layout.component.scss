@@ -1,0 +1,25 @@
+.hct-header {
+  background: #1e293b;
+  color: #fff;
+  padding: 16px 24px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.hct-nav {
+  padding: 16px 24px 0;
+
+  a {
+    margin-right: 12px;
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 600;
+
+    &.activo {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+  }
+}

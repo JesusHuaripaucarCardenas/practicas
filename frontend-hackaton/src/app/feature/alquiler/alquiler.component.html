@@ -1,0 +1,18 @@
+<h3>Alquileres</h3>
+<form class="hct-form" (ngSubmit)="guardar()">
+  <input name="clienteId" type="number" [(ngModel)]="form.clienteId" placeholder="ID Cliente" required>
+  <input name="vehiculoId" type="number" [(ngModel)]="form.vehiculoId" placeholder="ID Vehiculo" required>
+  <input name="dias" type="number" [(ngModel)]="form.dias" placeholder="Dias" required>
+  <input name="fechaInicio" type="date" [(ngModel)]="form.fechaInicio" required>
+  <input name="fechaFin" type="date" [(ngModel)]="form.fechaFin" required>
+  <input name="total" type="number" [(ngModel)]="form.total" placeholder="Total" required>
+  <button class="btn-crear" type="submit">{{ editando ? 'Actualizar' : 'Crear' }}</button>
+  <button class="btn-cancelar" type="button" *ngIf="editando" (click)="cancelar()">Cancelar</button>
+</form>
+<app-data-table
+  [columnas]="columnas"
+  [items]="items()"
+  (editar)="editar($event)"
+  (eliminar)="eliminar($event)"
+  (restaurar)="restaurar($event)">
+</app-data-table>

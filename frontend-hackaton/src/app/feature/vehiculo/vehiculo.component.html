@@ -1,0 +1,18 @@
+<h3>Vehiculos</h3>
+<form class="hct-form" (ngSubmit)="guardar()">
+  <input name="placa" [(ngModel)]="form.placa" placeholder="Placa" required>
+  <input name="marca" [(ngModel)]="form.marca" placeholder="Marca" required>
+  <input name="modelo" [(ngModel)]="form.modelo" placeholder="Modelo" required>
+  <input name="anio" type="number" [(ngModel)]="form.anio" placeholder="Año" required>
+  <input name="color" [(ngModel)]="form.color" placeholder="Color" required>
+  <input name="precioPorDia" type="number" [(ngModel)]="form.precioPorDia" placeholder="Precio/dia" required>
+  <button class="btn-crear" type="submit">{{ editando ? 'Actualizar' : 'Crear' }}</button>
+  <button class="btn-cancelar" type="button" *ngIf="editando" (click)="cancelar()">Cancelar</button>
+</form>
+<app-data-table
+  [columnas]="columnas"
+  [items]="items()"
+  (editar)="editar($event)"
+  (eliminar)="eliminar($event)"
+  (restaurar)="restaurar($event)">
+</app-data-table>

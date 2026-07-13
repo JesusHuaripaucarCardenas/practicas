@@ -1,0 +1,10 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: hct-cliente
+  r2dbc:
+    url: r2dbc:postgresql://ep-polished-leaf-acn11qxh-pooler.sa-east-1.aws.neon.tech:5432/neondb?sslMode=require
+    username: neondb_owner
+    password: npg_MNeK54wzgqdt

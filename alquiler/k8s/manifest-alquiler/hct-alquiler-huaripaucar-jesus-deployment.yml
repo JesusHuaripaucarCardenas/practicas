@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hct-alquiler
+  namespace: hct-huaripaucar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hct-alquiler
+  template:
+    metadata:
+      labels:
+        app: hct-alquiler
+    spec:
+      containers:
+        - name: hct-alquiler
+          image: jesushuaripaucarcardenas/hct-alquiler:latest
+          ports:
+            - containerPort: 8083
+          env:
+            - name: SPRING_R2DBC_URL
+              valueFrom:
+                secretKeyRef: { name: hct-alquiler-secret, key: R2DBC_URL }
+            - name: SPRING_R2DBC_USERNAME
+              valueFrom:
+                secretKeyRef: { name: hct-alquiler-secret, key: R2DBC_USERNAME }
+            - name: SPRING_R2DBC_PASSWORD
+              valueFrom:
+                secretKeyRef: { name: hct-alquiler-secret, key: R2DBC_PASSWORD }
+            - name: SERVICES_VEHICULO_URL
+              value: "http://hct-vehiculo-svc:8081"
+            - name: SERVICES_CLIENTE_URL
+              value: "http://hct-cliente-svc:8082"

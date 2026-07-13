@@ -1,0 +1,43 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 4px;
+}
+
+.btn-editar {
+  background: #f59e0b;
+  color: #fff;
+}
+
+.btn-eliminar {
+  background: #dc2626;
+  color: #fff;
+}
+
+.btn-restaurar {
+  background: #16a34a;
+  color: #fff;
+}
+
+.btn-mantenimiento {
+  background: #7c3aed;
+  color: #fff;
+}

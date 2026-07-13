@@ -1,0 +1,13 @@
+# --- Etapa 1: build ---
+FROM maven:3-eclipse-temurin-26 AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn -q clean package -DskipTests
+
+# --- Etapa 2: runtime ---
+FROM eclipse-temurin:26-jre
+WORKDIR /app
+COPY --from=build /app/target/alquiler-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 8083
+ENTRYPOINT ["java", "-jar", "app.jar"]
