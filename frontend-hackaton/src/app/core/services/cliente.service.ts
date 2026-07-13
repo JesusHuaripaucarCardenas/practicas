@@ -6,7 +6,7 @@ import { Cliente } from '../interfaces/cliente.interface';
 @Injectable({ providedIn: 'root' })
 export class ClienteService {
 
-  private baseUrl = 'https://fuzzy-happiness-69rx57jv4xv534x7v-30082.app.github.dev/api/clientes';
+  private baseUrl = 'https://upgraded-meme-r4r56vj7px9x2xp7r-30082.app.github.dev/api/clientes';
 
   constructor(private http: HttpClient) {}
 

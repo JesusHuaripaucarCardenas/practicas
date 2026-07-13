@@ -6,7 +6,7 @@ import { Vehiculo } from '../interfaces/vehiculo.interface';
 @Injectable({ providedIn: 'root' })
 export class VehiculoService {
 
-  private baseUrl = 'https://fuzzy-happiness-69rx57jv4xv534x7v-30081.app.github.dev/api/vehiculos';
+  private baseUrl = 'https://upgraded-meme-r4r56vj7px9x2xp7r-30081.app.github.dev/api/vehiculos';
 
   constructor(private http: HttpClient) {}
 
