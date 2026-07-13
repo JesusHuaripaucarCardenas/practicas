@@ -24,8 +24,9 @@ minikube version
 ```bash
 minikube start
 ```
-
-
+```
+minikube delete --profile=minikube
+```
 ## Verificar que los Pods están corriendo
 
 ```bash
