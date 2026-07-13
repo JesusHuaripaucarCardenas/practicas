@@ -190,7 +190,11 @@ INSERT INTO alquiler (cliente_id, vehiculo_id, dias, fecha_inicio, fecha_fin, to
 
 ```
 
-VEHICULO
+# VEHICULO
+ver pods
+```
+kubectl get pods -n hct-huaripaucar
+```
 ```
 https://hub.docker.com/r/jesushuaripaucarcardenas/hct-vehiculo/tags
 ```
