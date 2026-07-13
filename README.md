@@ -378,7 +378,9 @@ minikube service hct-frontend-svc -n hct-huaripaucar
 ```
 kubectl apply -f k8s/manifest-frontend/
 ```
-
+```
+kubectl port-forward -n hct-huaripaucar svc/hct-frontend-svc 30090:80
+```
 crear
 ```
 kubectl apply -f hct-frontend-huaripaucar-jesus-secret.yml
