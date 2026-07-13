@@ -24,8 +24,9 @@ minikube version
 ```bash
 minikube start
 ```
-
-
+```
+minikube delete --profile=minikube
+```
 ## Verificar que los Pods están corriendo
 
 ```bash
@@ -189,7 +190,11 @@ INSERT INTO alquiler (cliente_id, vehiculo_id, dias, fecha_inicio, fecha_fin, to
 
 ```
 
-VEHICULO
+# VEHICULO
+ver pods
+```
+kubectl get pods -n hct-huaripaucar
+```
 ```
 https://hub.docker.com/r/jesushuaripaucarcardenas/hct-vehiculo/tags
 ```
@@ -373,7 +378,9 @@ minikube service hct-frontend-svc -n hct-huaripaucar
 ```
 kubectl apply -f k8s/manifest-frontend/
 ```
-
+```
+kubectl port-forward -n hct-huaripaucar svc/hct-frontend-svc 30090:80
+```
 crear
 ```
 kubectl apply -f hct-frontend-huaripaucar-jesus-secret.yml
