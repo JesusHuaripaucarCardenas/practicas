@@ -401,3 +401,6 @@ kubectl delete -f hct-frontend-huaripaucar-jesus-deployment.yml
 ```
 kubectl delete -f hct-frontend-huaripaucar-jesus-secret.yml
 ```
+```
+kubectl rollout restart deployment/hct-frontend -n hct-huaripaucar
+```
