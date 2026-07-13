@@ -212,7 +212,7 @@ docker run -d \
   -p 8081:8081 \
   jesushuaripaucarcardenas/hct-vehiculo:latest
 ```
-# crear
+crear
 ```
 kubectl apply -f hct-vehiculo-huaripaucar-jesus-namespace.yml
 ```
@@ -225,7 +225,7 @@ kubectl apply -f hct-vehiculo-huaripaucar-jesus-deployment.yml
 ```
 kubectl apply -f hct-vehiculo-huaripaucar-jesus-service.yml
 ```
-# eliminar
+eliminar
 ```
 kubectl delete -f hct-vehiculo-huaripaucar-jesus-service.yml
 ```
@@ -238,7 +238,7 @@ kubectl delete -f hct-vehiculo-huaripaucar-jesus-secret.yml
 ```
 kubectl delete -f hct-vehiculo-huaripaucar-jesus-namespace.yml
 ```
-CLIENTE
+# CLIENTE
 ```
 https://hub.docker.com/r/jesushuaripaucarcardenas/hct-cliente/tags
 ```
@@ -281,7 +281,7 @@ minikube service hct-cliente-svc -n hct-huaripaucar
 ```
 kubectl port-forward -n hct-huaripaucar svc/hct-cliente-svc 30082:8082 &
 ```
-# crear
+crear
 ```
 kubectl apply -f hct-cliente-huaripaucar-jesus-secret.yml
 ```
@@ -291,7 +291,7 @@ kubectl apply -f hct-cliente-huaripaucar-jesus-deployment.yml
 ```
 kubectl apply -f hct-cliente-huaripaucar-jesus-service.yml
 ```
-# eliminar
+eliminar
 ```
 kubectl delete -f hct-cliente-huaripaucar-jesus-service.yml
 ```
@@ -301,7 +301,7 @@ kubectl delete -f hct-cliente-huaripaucar-jesus-deployment.yml
 ```
 kubectl delete -f hct-cliente-huaripaucar-jesus-secret.yml
 ```
-ALQUILER
+# ALQUILER
 crear
 
 ```
@@ -339,7 +339,7 @@ docker build -t jesushuaripaucarcardenas/hct-alquiler:latest .
 ```
 docker push jesushuaripaucarcardenas/hct-alquiler:latest   
 ```
-# crear
+crear
 ```
 kubectl apply -f hct-alquiler-huaripaucar-jesus-secret.yml
 ```
@@ -349,7 +349,7 @@ kubectl apply -f hct-alquiler-huaripaucar-jesus-deployment.yml
 ```
 kubectl apply -f hct-alquiler-huaripaucar-jesus-service.yml
 ```
-# eliminar
+eliminar
 ```
 kubectl delete -f hct-alquiler-huaripaucar-jesus-service.yml
 ```
@@ -360,7 +360,7 @@ kubectl delete -f hct-alquiler-huaripaucar-jesus-deployment.yml
 kubectl delete -f hct-alquiler-huaripaucar-jesus-secret.yml
 ```
 
-## FRONT END
+# FRONT END
 ```
 docker build -t jesushuaripaucarcardenas/hct-frontend:latest .
 ```
@@ -374,7 +374,7 @@ minikube service hct-frontend-svc -n hct-huaripaucar
 kubectl apply -f k8s/manifest-frontend/
 ```
 
-# crear
+crear
 ```
 kubectl apply -f hct-frontend-huaripaucar-jesus-secret.yml
 ```
@@ -384,7 +384,7 @@ kubectl apply -f hct-frontend-huaripaucar-jesus-deployment.yml
 ```
 kubectl apply -f hct-frontend-huaripaucar-jesus-service.yml
 ```
-# eliminar
+eliminar
 ```
 kubectl delete -f hct-frontend-huaripaucar-jesus-service.yml
 ```
